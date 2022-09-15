@@ -1,0 +1,92 @@
+﻿@model test667.data.Models.Proizvod
+
+@{
+    Layout = "~/Views/Shared/_Layout_LoggedIn.cshtml";
+    ViewBag.Title = "Креирај нов производ";
+}
+
+<h2>Нов Производ</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Производ</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        Име
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Категорија
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.kategorija, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.kategorija, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Краток опис
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.kratok_opis, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.kratok_opis, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Долг опис
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.dolg_opis, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.dolg_opis, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Слика
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.slika, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.slika, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Цена
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Cena, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Cena, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Линк за проспект
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.prospekt_link, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.prospekt_link, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Линк за упатство
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.upatstvo_link, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.upatstvo_link, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Креирај" class="btn btn-outline-dark" />
+        </div>
+    </div>
+</div>
+}
+
+<div class="btn-group" role="group">
+    <button type="button" class="btn btn-secondary">@Html.ActionLink("Назад кон листата", "Index")</button>
+</div>

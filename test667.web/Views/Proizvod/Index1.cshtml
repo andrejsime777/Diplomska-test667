@@ -1,0 +1,29 @@
+﻿@model IEnumerable<test667.data.Models.Proizvod>
+
+@{
+    ViewBag.Title = "Производи";
+}
+
+<section class="lista-proizvodi">
+
+    <h1>Заштита на растенија</h1><br />
+    <div class="proizvodi-container">
+
+        @foreach (var item in Model.Where(p => p.kategorija == test667.data.Models.Kategorija.Zastita_Rastenija))
+        {
+
+            <div class="card">
+                <div class="slika-proizvod"><a href="@Url.Action("Detali1", new { id=item.Id })"><img src="@Html.DisplayFor(modelItem => item.slika)" alt="@Html.DisplayFor(modelItem => item.ime)"></a></div>
+                <div class="naslov-proizvod"><a href="@Url.Action("Detali1", new { id=item.Id })">@Html.DisplayFor(modelItem => item.ime)</a></div>
+                <div class="kratok-opis-proizvod">@Html.DisplayFor(modelItem => item.kratok_opis)</div>
+                <div class="cena">@Html.DisplayFor(modelItem => item.Cena) ден.</div>
+                <div class="d-inline-block">
+                    <button class="kopce-proizvod">во кошничка</button>
+                    <button class="kopce-proizvod"><a href="@Url.Action("Detali1", new { id=item.Id })">повеќе</a></button>
+                </div>
+            </div>
+
+        }
+
+    </div>
+</section>

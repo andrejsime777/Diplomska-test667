@@ -1,0 +1,29 @@
+﻿@model test667.web.ViewModels.ProgramiListViewModel
+@{
+    Layout = "~/Views/Shared/_Layout_LoggedIn.cshtml";
+    ViewBag.Title = "Програми";
+}
+
+<ul class="nav nav-tabs justify-content-center programi">
+    <li class='nav-item'>
+        <a class='nav-link' data-toggle='tab' href='#a_1'>@Model.CurrentCategory</a>
+    </li>
+    <li class='nav-item'>
+        <a class='nav-link ' data-toggle='tab' href='#a_2'>Програми за исхрана</a>
+    </li>
+    <li class='nav-item'>
+        <a class='nav-link ' data-toggle='tab' href='#a_3'>Програми за заштита и исхрана</a>
+    </li>
+
+</ul>
+
+<br />
+<div class="tab-content">
+    @foreach (var program in Model.Programi)
+    {
+        <div class='tab-pane container fade justify-content-center text-center' id='a_@program.Id'>
+            <a target="_blank" href="@program.Link">@program.Ime</a>
+        </div>
+    }
+</div>
+

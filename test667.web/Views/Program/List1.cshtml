@@ -1,0 +1,73 @@
+﻿@model test667.web.ViewModels.ProgramiListViewModel
+
+@{
+    ViewBag.Title = "Програми";
+    Layout = "~/Views/Shared/_Layout_LoggedIn.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Креирај нов програм", "nov_program")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Име
+        </th>
+        <th>
+            Линк
+        </th>
+        <th>
+            Категорија
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Programi)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Link)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kategorija_programi_KategorijaId)
+            </td>
+            <td>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-secondary">@Html.ActionLink("Измени", "Izmeni", new { id = item.Id })</button>
+                    <button type="button" class="btn btn-secondary">@Html.ActionLink("Избриши", "Izbrishi", new { id = item.Id })</button>
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<br />
+<p>
+    @Html.ActionLink("Креирај нова категорија", "nova_kategorija")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Име
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Kategorija)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KategorijaIme)
+            </td>
+            <td>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-secondary">@Html.ActionLink("Измени", "Izmeni_kategorija", new { id = item.KategorijaId })</button>
+                    <button type="button" class="btn btn-secondary">@Html.ActionLink("Избриши", "Izbrishi_kategorija", new { id = item.KategorijaId })</button>
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,41 @@
+﻿@model test667.data.Models.Brz_link
+
+@{
+    ViewBag.Title = "Избриши";
+    Layout = "~/Views/Shared/_Layout_LoggedIn.cshtml";
+}
+
+<h3>Дали сакате да го избришете овој линк?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Избриши" class="btn btn-danger" />
+        </div>
+    }
+    <br /><div class="btn-group" role="group">
+        <button type="button" class="btn btn-secondary">@Html.ActionLink("Назад кон листата", "Index")</button>
+    </div>
+</div>

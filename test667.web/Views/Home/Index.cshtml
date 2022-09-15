@@ -1,0 +1,22 @@
+﻿@model IEnumerable<test667.data.Models.Proizvod>
+@{
+    ViewBag.Title = "Почетна";
+}
+
+<div class="jumbotron">
+    <h1>Дипломска</h1>
+    <p class="lead">Во датабазата има @Model.Count() производи</p>
+    <p><a href="@Url.Action("Index1","Proizvod")" class="btn btn-primary btn-lg">Кон производи &raquo;</a></p>
+</div>
+
+<div class="row">
+
+    @foreach (var proizvod in Model)
+    {
+        <div class="col-md-4">
+            <h3>@proizvod.ime</h3>
+        </div>
+        
+    }
+
+</div>

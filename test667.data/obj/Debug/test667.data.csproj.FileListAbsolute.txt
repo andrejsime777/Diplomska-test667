@@ -1,0 +1,12 @@
+C:\Diplomska\test667\test667.data\bin\Debug\test667.data.dll
+C:\Diplomska\test667\test667.data\bin\Debug\test667.data.pdb
+C:\Diplomska\test667\test667.data\obj\Debug\test667.data.csproj.AssemblyReference.cache
+C:\Diplomska\test667\test667.data\obj\Debug\test667.data.csproj.CoreCompileInputs.cache
+C:\Diplomska\test667\test667.data\obj\Debug\test667.data.dll
+C:\Diplomska\test667\test667.data\obj\Debug\test667.data.pdb
+C:\Diplomska\test667\test667.data\bin\Debug\test667.data.dll.config
+C:\Diplomska\test667\test667.data\bin\Debug\EntityFramework.dll
+C:\Diplomska\test667\test667.data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Diplomska\test667\test667.data\bin\Debug\EntityFramework.xml
+C:\Diplomska\test667\test667.data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Diplomska\test667\test667.data\obj\Debug\test667.data.csproj.CopyComplete

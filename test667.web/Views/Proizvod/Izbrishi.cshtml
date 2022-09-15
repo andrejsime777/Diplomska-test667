@@ -1,0 +1,85 @@
+﻿@model test667.data.Models.Proizvod
+
+@{
+    Layout = "~/Views/Shared/_Layout_LoggedIn.cshtml";
+    ViewBag.Title = "Избриши";
+}
+
+<h2>Избриши</h2>
+
+<h3>Дали сакате да го избришете овој производ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kratok_opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kratok_opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dolg_opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dolg_opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.slika)
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(model => model.slika)" height="180px" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cena) ден.
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prospekt_link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prospekt_link)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.upatstvo_link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.upatstvo_link)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Избриши" class="btn btn-danger" />
+        </div>
+    }
+
+    <div class="btn-group" role="group" style="margin-top:10px">
+        <button type="button" class="btn btn-secondary">@Html.ActionLink("Назад кон листата", "Index")</button>
+    </div>
+
+</div>

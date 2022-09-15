@@ -1,0 +1,56 @@
+﻿@model IEnumerable<test667.data.Models.Proizvod>
+
+@{
+    Layout = "~/Views/Shared/_Layout_LoggedIn.cshtml";
+    ViewBag.Title = "Производи";
+}
+
+<h2>Листа на производи</h2>
+
+<p>
+    @Html.ActionLink("Креирај нов производ", "nov_proizvod")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Име
+        </th>
+        <th>
+            Краток опис
+        </th>
+        <th>
+            Слика
+        </th>
+        <th>
+            Цена
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kratok_opis)
+            </td>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.slika)" height="120px" />
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cena) ден.
+            </td>
+            <td>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-secondary">@Html.ActionLink("Измени", "Izmeni", new { id = item.Id })</button>
+                    <button type="button" class="btn btn-secondary">@Html.ActionLink("Детали", "Detali", new { id = item.Id })</button>
+                    <button type="button" class="btn btn-secondary">@Html.ActionLink("Избриши", "Izbrishi", new { id = item.Id })</button>
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>

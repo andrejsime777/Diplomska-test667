@@ -1,0 +1,20 @@
+﻿@model test667.data.Models.Proizvod
+
+@{
+    ViewBag.Title = @Html.DisplayFor(model => model.ime);
+}
+
+<div class="container detali">
+    <div class="row">
+        <div class="col-md-8">
+            <p class="opis-detali">@Html.DisplayFor(model => model.dolg_opis)</p>
+
+            <button class="kopce-proizvod"><a href="@Model.prospekt_link" target="_blank">Преземи проспект</a></button>
+            <button class="kopce-proizvod"><a href="@Model.upatstvo_link" target="_blank">Преземи упатство</a></button>
+            <button class="kopce-proizvod"><a href="#">Додади во кошничка</a></button>
+        </div>
+        <div class="col-md-4">
+            <img src="@Model.slika" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<test667.data.Models.Brz_link>
+@{
+    ViewBag.Title = "За нас";
+}
+
+<p>Use this area to provide additional information.</p>
+
+<div>There are @Enumerable.Count(Model) number of links in the dbs</div><br /><br />
+
+@foreach (var brzlink in Model)
+{
+    <div class="col-md-4">
+        <a href="@brzlink.Link" target="_blank">@brzlink.Ime</a>
+    </div>
+
+}
